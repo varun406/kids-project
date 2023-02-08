@@ -1,6 +1,6 @@
 export const workshops = [
   {
-    img: "/assets/Camera Roll/WORKSHOPS AND CAMPS/web 39.jpg",
+    img: "/assets/Camera Roll/WORKSHOPS AND CAMPS/web 38.jpg",
     title: "3 Days STREAM Workshop",
     desc: [
       "Topics Covered Coding, AI, Robotics",
@@ -10,7 +10,7 @@ export const workshops = [
     ],
   },
   {
-    img: "/assets/Camera Roll/WORKSHOPS AND CAMPS/web 38.jpg",
+    img: "/assets/Camera Roll/WORKSHOPS AND CAMPS/web 39.jpg",
     title: "5 Days STREAM Workshop",
     desc: [
       "Topics Covered Coding, AI, Robotics & IoT",

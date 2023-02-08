@@ -41,13 +41,12 @@ const Header = ({ user }) => {
     const CheckLogin = async () => {
       if (token) {
         setAuthentication(true);
-
         const res = await GetSingleUser(token);
         setUser(res.data.user);
       }
     };
 
-    setTimeout(CheckLogin(), 50000);
+    CheckLogin();
   }, []);
 
   const logout = () => {
@@ -66,7 +65,7 @@ const Header = ({ user }) => {
                 <Menu sx={iconStyles} onClick={handleSidebar} />
               </MenuSection>
               <Link to="/">
-                <Logo src="./assets/logo1.png" alt="logo" />
+                <Logo src="/logo1.png" alt="logo" />
               </Link>
             </LogoSection>
 

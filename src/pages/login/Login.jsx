@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import Auth from "../../components/auth/Auth";
 import { loginSchema } from "./validator";
@@ -9,7 +9,8 @@ import { Authentication } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const setContest = useContext(Authentication);
+  const { setLoading, isLoading, setAuthentication, isAuthenticated, setUser } =
+    useContext(Authentication);
   const navigate = useNavigate();
   const win = window.localStorage;
 
@@ -17,16 +18,24 @@ const Login = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm({ resolver: yupResolver(loginSchema) });
 
   const onSubmit = async (d) => {
-    setContest.setLoading(true);
+    setLoading(true);
     const res = await AuthenticateAPI("login", d);
-    setContest.setLoading(false);
+    console.log(isLoading);
+    setLoading(false);
     if (res.success) {
-      setContest.setAuthentication(true);
-      setContest.setUser(res.message);
+      setAuthentication(true);
+      console.log(isAuthenticated);
+      setUser(res.message);
+      console.log(res.message.role);
+      win.setItem("token", res.token);
+      if (res.message.role === "Admin") {
+        navigate("/admin", { replace: true });
+      }
+
+      console.log(res.token);
       win.setItem("token", res.token);
       navigate("/", { replace: true });
     }

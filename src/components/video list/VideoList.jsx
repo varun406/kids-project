@@ -8,6 +8,7 @@ import {
   ref,
 } from "firebase/storage";
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { app } from "../../firebaseConfig";
 import { videoIconStyles, VideoName, VideoSection } from "./VideoList.styles";
 
@@ -18,6 +19,11 @@ const VideoList = ({ id, player, videoName }) => {
   const listRef = ref(storage, `courses/${id}`);
 
   useEffect(() => {
+    window.localStorage.setItem(
+      "token",
+      "0c2d6894-7828-4ec3-a6c7-f68d8c3a86d2"
+    );
+
     const getVideos = async () => {
       setVideoDetails([]);
       listAll(listRef)
@@ -55,6 +61,8 @@ const VideoList = ({ id, player, videoName }) => {
     sortData();
   }, [id]);
 
+  const navigate = useNavigate();
+
   return (
     <VideoSection player={player}>
       <List
@@ -65,7 +73,7 @@ const VideoList = ({ id, player, videoName }) => {
             <List.Item.Meta
               avatar={<OndemandVideo sx={videoIconStyles} />}
               title={
-                <a href={`/course/${id}/video/${item.name}`}>
+                <Link to={`/course/${id}/video/${item.name}`}>
                   <VideoName>
                     {item.name === videoName ? (
                       <>
@@ -76,7 +84,7 @@ const VideoList = ({ id, player, videoName }) => {
                       item.name?.slice(0, -4)
                     )}
                   </VideoName>
-                </a>
+                </Link>
               }
             />
           </List.Item>

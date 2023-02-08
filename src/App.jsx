@@ -53,27 +53,30 @@ const App = () => {
   const [isLoading, setLoading] = useState(false);
   const [User, setUser] = useState();
   const [courseModalData, setCourseModalData] = useState();
+
+  console.clear();
+
   return (
     <div className="App">
-      <SidebarContext.Provider value={{ isSidebarOpen, setSidebarOpen }}>
-        <CongratsModal.Provider value={{ setCongratsModalOpen }}>
-          <RatingModal.Provider value={{ setRatingModalOpen }}>
-            <CourseModalContext.Provider
-              value={{
-                isCourseModalOpen,
-                setCourseModalOpen,
-                courseModalData,
-                setCourseModalData,
-              }}
-            >
-              <Authentication.Provider
+      <Authentication.Provider
+        value={{
+          isAuthenticated,
+          setAuthentication,
+          isLoading,
+          setLoading,
+          User,
+          setUser,
+        }}
+      >
+        <SidebarContext.Provider value={{ isSidebarOpen, setSidebarOpen }}>
+          <CongratsModal.Provider value={{ setCongratsModalOpen }}>
+            <RatingModal.Provider value={{ setRatingModalOpen }}>
+              <CourseModalContext.Provider
                 value={{
-                  isAuthenticated,
-                  setAuthentication,
-                  isLoading,
-                  setLoading,
-                  User,
-                  setUser,
+                  isCourseModalOpen,
+                  setCourseModalOpen,
+                  courseModalData,
+                  setCourseModalData,
                 }}
               >
                 <Router>
@@ -112,17 +115,8 @@ const App = () => {
                     <Route path="/fab-lab" element={<FabLab />} />
                     <Route path="/school-ai-lab" element={<School />} />
                     <Route path="/media/images" element={<Gallery />} />
-                    <Route path="/media/videos" element={<Videos />} />
                     <Route path="/courses" element={<Courses />} />
-                    <Route
-                      path="/courses/:category"
-                      element={<CategoryCourse />}
-                    />
-                    <Route
-                      path="/course/:id/video/:vidname"
-                      element={<VideoPlayer />}
-                    />
-
+                    <Route path="/media/videos" element={<Videos />} />
                     <Route
                       element={
                         <PrivateRoute
@@ -132,27 +126,45 @@ const App = () => {
                         />
                       }
                     >
+                      <Route
+                        path="/courses/:category"
+                        element={<CategoryCourse />}
+                      />
+                      <Route
+                        path="/course/:id/video/:vidname"
+                        element={<VideoPlayer />}
+                      />
                       <Route path="/course/:id" element={<ShowCourse />} />
                       <Route path="/search" element={<Search />} />
                       <Route path="/complete" element={<Completion />} />
                       <Route path="/cart" element={<Cart />} />
                       <Route path="/my-courses" element={<BuyedCourses />} />
                     </Route>
-                    {/* <Route element={<AdminPrivateRoute isLoading={isLoading} redirectOn={'/'} authenticated={isAuthenticated} user={User} onlyFor={"User"}/>}> */}
-                    <Route path="/admin" element={<Admin />} />
-                    <Route path="/admin/edit" element={<EditCourse />} />
                     <Route
-                      path="/admin/course/:id/video/"
-                      element={<VideoBrief />}
-                    />
-                    {/* </Route> */}
+                      element={
+                        <AdminPrivateRoute
+                          isLoading={isLoading}
+                          redirectOn={"/"}
+                          authenticated={isAuthenticated}
+                          user={User}
+                          onlyFor={"Admin"}
+                        />
+                      }
+                    >
+                      <Route path="/admin" element={<Admin />} />
+                      <Route path="/admin/edit" element={<EditCourse />} />
+                      <Route
+                        path="/admin/course/:id/video/"
+                        element={<VideoBrief />}
+                      />
+                    </Route>
                   </Routes>
                 </Router>
-              </Authentication.Provider>
-            </CourseModalContext.Provider>
-          </RatingModal.Provider>
-        </CongratsModal.Provider>
-      </SidebarContext.Provider>
+              </CourseModalContext.Provider>
+            </RatingModal.Provider>
+          </CongratsModal.Provider>
+        </SidebarContext.Provider>
+      </Authentication.Provider>
     </div>
   );
 };
