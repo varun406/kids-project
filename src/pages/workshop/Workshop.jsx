@@ -37,7 +37,10 @@ const Workshop = () => {
               Workshops & Camps
             </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/WORKSHOPS AND CAMPS/WORKSHOPS _ CAMPS.jpg" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/WORKSHOPS AND CAMPS/WORKSHOPS _ CAMPS.jpg"
+          />
         </BannerSection>
         <SectionHeading>
           Robotics Workshops & Coding Camps for Kids Ages 8-18
@@ -46,7 +49,10 @@ const Workshop = () => {
         <WorkshopSection>
           {workshops.map((data) => (
             <WorkshopWrap>
-              <WorkshopImage src={data.img} />
+              <WorkshopImage
+                onContextMenu={(e) => e.preventDefault()}
+                src={data.img}
+              />
               <WorkshopDetails>
                 <Title>{data.title}</Title>
                 <WorkshopList>

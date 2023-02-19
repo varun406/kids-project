@@ -10,11 +10,15 @@ export const Wrapper = styled.div`
 `;
 
 export const WorkshopSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 20px;
 `;
 export const WorkshopWrap = styled.div`
+  width: 100%;
+  max-width: 300px;
   border: 1px solid black;
 `;
 export const WorkshopImage = styled.img`

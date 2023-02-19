@@ -15,7 +15,13 @@ const Carousel = () => {
           <StyledSlider {...carouselSettings}>
             {atalVideos.map((video) => (
               <ImgWrap>
-                <SlideVideo autoPlay loop muted src={video.src} />
+                <SlideVideo
+                  autoPlay
+                  loop
+                  muted
+                  onContextMenu={(e) => e.preventDefault()}
+                  src={video.src}
+                />
               </ImgWrap>
             ))}
           </StyledSlider>

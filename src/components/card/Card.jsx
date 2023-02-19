@@ -43,7 +43,12 @@ const Card = ({
       {!loading ? (
         <Cards cart={cart} key={courseId}>
           <ImageSection>
-            <CourseImage cart={cart} src={image} alt="course_img" />
+            <CourseImage
+              onContextMenu={(e) => e.preventDefault()}
+              cart={cart}
+              src={image}
+              alt="course_img"
+            />
           </ImageSection>
           <DetailSection>
             <CourseDetails cart={cart}>

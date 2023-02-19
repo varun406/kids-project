@@ -95,7 +95,7 @@ const Videos = () => {
               <Link to="/login" key={index}>
                 <PlayerWrap>
                   <VideoWrap>
-                    <Player>
+                    <Player onContextMenu={(e) => e.preventDefault()}>
                       <source src={data.link} />
                     </Player>
                   </VideoWrap>

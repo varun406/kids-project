@@ -1,5 +1,6 @@
 import Slider from "react-slick";
 import styled from "styled-components";
+import { SectionDesc } from "../../components/CommonStyles";
 
 export const Wrapper = styled.div`
   width: min(1250px, calc(100% - 48px));
@@ -10,7 +11,15 @@ export const Wrapper = styled.div`
   padding-block: 50px;
 `;
 
-export const Section = styled.div``;
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const StyledDesc = styled(SectionDesc)`
+  text-align: center;
+`;
+
 export const ExpertiseSection = styled.div`
   background-color: #bccef8;
   border-radius: 20px;
@@ -42,7 +51,7 @@ export const GroupSection = styled.div`
 
 export const PackageGroup = styled.div`
   width: 100%;
-  max-width: 400px;
+  max-width: 460px;
 `;
 
 export const ServiceGroup = styled(PackageGroup)`
@@ -60,6 +69,7 @@ export const ServiceGridSection = styled.div`
 `;
 
 export const Heading = styled.h1`
+  text-align: center;
   font-size: 18px;
   color: darkgrey;
 `;
@@ -77,7 +87,7 @@ export const Title = styled.h1`
   font-size: 14px;
 `;
 export const Image = styled.img`
-  width: 100%;
+  width: 80%;
 `;
 
 export const ServiceImage = styled.img`
@@ -90,7 +100,7 @@ export const ServiceDesc = styled.p`
   font-size: 14px;
 `;
 
-export const EnquireButton = styled.button`
+export const EnquireButton = styled.a`
   width: 100%;
   max-width: 200px;
   background-color: darkblue;
@@ -99,10 +109,9 @@ export const EnquireButton = styled.button`
   font-size: 16px;
   font-weight: 600;
   color: white;
-
-  @media (max-width: 420px) {
-    margin-inline: auto;
-  }
+  text-decoration: none;
+  text-align: center;
+  margin-inline: auto;
 `;
 
 export const MediaSection = styled.div`

@@ -114,7 +114,10 @@ const CourseModal = () => {
         {true ? (
           <ModalWrap>
             <ImageSection>
-              <CourseImage src={courseModalData?.img} />
+              <CourseImage
+                onContextMenu={(e) => e.preventDefault()}
+                src={courseModalData?.img}
+              />
             </ImageSection>
             <Description>
               <StyledTitle>{courseModalData?.courseName}</StyledTitle>

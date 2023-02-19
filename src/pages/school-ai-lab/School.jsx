@@ -39,10 +39,13 @@ const School = () => {
               duration={1.7}
               tag="h1"
             >
-              School AI Lab
+              School: AI Lab
             </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/SCHOOL - AI LAB/AI LAB.jpg" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/SCHOOL - AI LAB/AI LAB.jpg"
+          />
         </BannerSection>
         {schoolData.map((data, index) => {
           return (
@@ -55,7 +58,10 @@ const School = () => {
               </InfoColumn>
               <ImageColumn>
                 <Fade right={!FadeDirection(index)} left={FadeDirection(index)}>
-                  <SectionImage src={data.img} />
+                  <SectionImage
+                    onContextMenu={(e) => e.preventDefault()}
+                    src={data.img}
+                  />
                 </Fade>
               </ImageColumn>
             </BriefSection>

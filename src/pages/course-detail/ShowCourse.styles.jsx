@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 export const DetailSection = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
 
   @media (max-width: 1130px) {
     flex-direction: column;
@@ -196,6 +196,8 @@ export const GoTo = styled.button`
   font-weight: bold;
   cursor: pointer;
 `;
+
+export const PurchaseKit = styled(GoTo)``;
 
 export const CourseSubtitle = styled.p`
   font-size: 18px;

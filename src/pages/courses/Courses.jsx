@@ -45,7 +45,10 @@ const Courses = () => {
               Courses
             </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/COURSE/COURSE.jpeg" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/COURSE/COURSE.jpeg"
+          />
         </BannerSection>
         <center>
           <SectionHeading>WHAT WE OFFER</SectionHeading>
@@ -63,7 +66,10 @@ const Courses = () => {
 
             <ImageColumn>
               <Fade right={!FadeDirection(index)} left={FadeDirection(index)}>
-                <SectionImage src={item.src} />
+                <SectionImage
+                  onContextMenu={(e) => e.preventDefault()}
+                  src={item.src}
+                />
               </Fade>
             </ImageColumn>
           </BriefSection>

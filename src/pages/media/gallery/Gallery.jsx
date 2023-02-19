@@ -23,7 +23,12 @@ const Gallery = () => {
         </center>
         <GalleryGrid>
           {galleryImages.map((item, index) => (
-            <GalleryImage src={item.src} alt="" key={index} />
+            <GalleryImage
+              onContextMenu={(e) => e.preventDefault()}
+              src={item.src}
+              alt=""
+              key={index}
+            />
           ))}
         </GalleryGrid>
       </Wrapper>

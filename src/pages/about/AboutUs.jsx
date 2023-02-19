@@ -63,7 +63,10 @@ const AboutUs = () => {
                 About us
               </AnimatedText>
             </center>
-            <Banner src="./assets/Camera Roll/ABOUT/ABOUT US.png" />
+            <Banner
+              onContextMenu={(e) => e.preventDefault()}
+              src="./assets/Camera Roll/ABOUT/ABOUT US.png"
+            />
           </BannerSection>
         </Pulse>
         <BriefSection>
@@ -100,7 +103,10 @@ const AboutUs = () => {
             </InfoColumn>
             <ImageColumn>
               <Fade right={FadeDirection(index)} left={!FadeDirection(index)}>
-                <SectionImage src={item.img} />
+                <SectionImage
+                  onContextMenu={(e) => e.preventDefault()}
+                  src={item.img}
+                />
               </Fade>
             </ImageColumn>
           </BriefSection>

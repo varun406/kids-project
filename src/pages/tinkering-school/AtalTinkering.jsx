@@ -1,5 +1,6 @@
 import React from "react";
 import AnimatedText from "react-animated-text-content";
+import CountUp from "react-countup";
 import {
   Banner,
   BannerSection,
@@ -35,6 +36,7 @@ import {
   ServiceGridSection,
   ServiceGroup,
   ServiceImage,
+  StyledDesc,
   Title,
   Wrapper,
 } from "./AtalTinkering.styles";
@@ -65,7 +67,10 @@ const AtalTinkering = () => {
               Atal Tinkering School
             </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/ATAL TINKERING LAB/ATAL TINKERING LAB.png" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/ATAL TINKERING LAB/ATAL TINKERING LAB.png"
+          />
         </BannerSection>
         <Section>
           <SectionHeading>ATAL TINKERING SCHOOL</SectionHeading>
@@ -85,13 +90,17 @@ const AtalTinkering = () => {
         <ExpertiseSection>
           <Expertise>
             <First>
-              <Colored>100+</Colored>
+              <Colored>
+                <CountUp end={100} duration={10} />+
+              </Colored>
               <Desc>Schools</Desc>
             </First>
           </Expertise>
           <Expertise>
             <Second>
-              <Colored>15,000+</Colored>
+              <Colored>
+                <CountUp end={15000} duration={10} separator="," />+
+              </Colored>
               <Desc>Users</Desc>
             </Second>
           </Expertise>
@@ -104,7 +113,10 @@ const AtalTinkering = () => {
                 <CardWrap>
                   <Package>
                     <Title>{data.title}</Title>
-                    <Image src={data.img} />
+                    <Image
+                      onContextMenu={(e) => e.preventDefault()}
+                      src={data.img}
+                    />
                   </Package>
                 </CardWrap>
               ))}
@@ -117,7 +129,10 @@ const AtalTinkering = () => {
                 <CardWrap>
                   <Package>
                     <Title>{data.title}</Title>
-                    <ServiceImage src={data.img} />
+                    <ServiceImage
+                      onContextMenu={(e) => e.preventDefault()}
+                      src={data.img}
+                    />
                     <ServiceDesc>{data.desc}</ServiceDesc>
                   </Package>
                 </CardWrap>
@@ -129,25 +144,34 @@ const AtalTinkering = () => {
           <SectionHeading>
             Interested in Establishment of Atal Tinkering Lab at your School?
           </SectionHeading>
-          <SectionDesc>
+          <StyledDesc>
             Click on Enqire Now and fill the form to know more about ATL Labs.
-          </SectionDesc>
-          <EnquireButton>Enquire Now!</EnquireButton>
+          </StyledDesc>
+          <EnquireButton href="/atal-tinkering-school">
+            Enquire Now!
+          </EnquireButton>
         </Section>
         <Section>
           <SectionHeading>
             Schedule a Mentors and Expert Session for ATL (Atal Tinkering Lab)
           </SectionHeading>
-          <SectionDesc>
+          <StyledDesc>
             Fill the form to schedule a mentor session for ATL. Enquire Now!
-          </SectionDesc>
-          <EnquireButton>Enquire Now!</EnquireButton>
+          </StyledDesc>
+          <EnquireButton href="/atal-tinkering-school">
+            Enquire Now!
+          </EnquireButton>
         </Section>
         <Section>
           <SectionHeading>GALLERY: ATAL TINKERING LAB</SectionHeading>
           <SectionSlider {...ImageSliderSettings}>
             {atalImages.map((img, index) => (
-              <MediaImages src={img.src} alt={index} key={index} />
+              <MediaImages
+                onContextMenu={(e) => e.preventDefault()}
+                src={img.src}
+                alt={index}
+                key={index}
+              />
             ))}
           </SectionSlider>
         </Section>
@@ -155,7 +179,12 @@ const AtalTinkering = () => {
           <SectionHeading>VIDEOS: ATAL TINKERING LAB</SectionHeading>
           <SectionSlider {...VideoSliderSettings}>
             {atalVideos.map((videos, index) => (
-              <MediaVideos controls key={index}>
+              <MediaVideos
+                controls
+                controlsList="nodownload"
+                onContextMenu={(e) => e.preventDefault()}
+                key={index}
+              >
                 <source src={videos.src} />
               </MediaVideos>
             ))}

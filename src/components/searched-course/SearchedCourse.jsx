@@ -24,7 +24,7 @@ const SearchedCourse = ({ data }) => {
     <Wrapper>
       <GlobalStyles />
       <ImageSection>
-        <CourseImg src={data?.img} />
+        <CourseImg onContextMenu={(e) => e.preventDefault()} src={data?.img} />
       </ImageSection>
       <DetailSection>
         <CourseName>{data?.courseName}</CourseName>

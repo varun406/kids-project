@@ -33,18 +33,21 @@ const FabLab = () => {
       <GlobalStyles />
       <Wrapper>
         <BannerSection>
-        <center>
-          <AnimatedText
-            type="chars"
-            animationType="float"
-            interval={0.1}
-            duration={1.7}
-            tag="h1"
-          >
-            Fab Lab
-          </AnimatedText>
+          <center>
+            <AnimatedText
+              type="chars"
+              animationType="float"
+              interval={0.1}
+              duration={1.7}
+              tag="h1"
+            >
+              Fab Lab
+            </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/FABLAB/FAB LAB.png" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/FABLAB/FABLAB.png"
+          />
         </BannerSection>
         <center>
           <SectionHeading>Program for Ages 14+</SectionHeading>
@@ -60,7 +63,10 @@ const FabLab = () => {
               </InfoColumn>
               <ImageColumn>
                 <Fade right={!FadeDirection(index)} left={FadeDirection(index)}>
-                  <SectionImage src={data.img} />
+                  <SectionImage
+                    onContextMenu={(e) => e.preventDefault()}
+                    src={data.img}
+                  />
                 </Fade>
               </ImageColumn>
             </BriefSection>

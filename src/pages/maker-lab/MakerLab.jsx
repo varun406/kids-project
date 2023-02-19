@@ -42,7 +42,10 @@ const MakerLab = () => {
               Makers Lab
             </AnimatedText>
           </center>
-          <Banner src="./assets/Camera Roll/MAKER LAB/MAKER LAB.jpg" />
+          <Banner
+            onContextMenu={(e) => e.preventDefault()}
+            src="./assets/Camera Roll/MAKER LAB/MAKER LAB.jpg"
+          />
         </BannerSection>
         <center>
           <SectionHeading>Program for Ages 11-13</SectionHeading>
@@ -58,7 +61,10 @@ const MakerLab = () => {
               </InfoColumn>
               <ImageColumn>
                 <Fade right={!FadeDirection(index)} left={FadeDirection(index)}>
-                  <SectionImage src={data.img} />
+                  <SectionImage
+                    onContextMenu={(e) => e.preventDefault()}
+                    src={data.img}
+                  />
                 </Fade>
               </ImageColumn>
             </BriefSection>

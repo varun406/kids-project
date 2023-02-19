@@ -37,6 +37,7 @@ import {
   IntroWrap,
   PartOne,
   PartTwo,
+  PurchaseKit,
   PurchaseSection,
   RatingSection,
   RecommendationSection,
@@ -248,7 +249,10 @@ const ShowCourse = () => {
                 </HiddenPurchaseSection>
               </PartOne>
               <PartTwo>
-                <CourseImg src={course?.img} />
+                <CourseImg
+                  onContextMenu={(e) => e.preventDefault()}
+                  src={course?.img}
+                />
                 <PurchaseSection>
                   {!courseAdded ? (
                     <CoursePrice>₹{course?.price}</CoursePrice>
@@ -312,6 +316,9 @@ const ShowCourse = () => {
                 )}
               </DescriptionSection>
             </Section>
+
+            <PurchaseKit>Purchase Kit</PurchaseKit>
+
             <SectionHeading>Course content</SectionHeading>
             <VideoList id={id} />
           </CourseSection>
