@@ -58,13 +58,17 @@ export const SocialMedias = styled.div`
 export const iconStyles = {
   width: "40px",
   height: "40px",
+  cursor: "pointer",
+  color: "black",
 };
 
+export const Redirect = styled.a``;
+
 export const GetInTouch = styled.div`
+  width: 100%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `;
 export const GetInTouchHeading = styled.h1`
   font-size: 18px;
@@ -83,7 +87,7 @@ export const EmailLogo = styled.div``;
 export const EmailId = styled.p``;
 export const CopyRightSection = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
 `;
 export const CopyRightHeading = styled.p`

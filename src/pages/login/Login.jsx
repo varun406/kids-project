@@ -23,7 +23,6 @@ const Login = () => {
   const onSubmit = async (d) => {
     setLoading(true);
     const res = await AuthenticateAPI("login", d);
-    console.log(isLoading);
     setLoading(false);
     if (res.success) {
       setAuthentication(true);

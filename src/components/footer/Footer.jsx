@@ -20,6 +20,7 @@ import {
   PhoneNumberOne,
   PhoneNumberSection,
   PhoneSection,
+  Redirect,
   SocialMedias,
   Wrapper,
 } from "./Footer.styles";
@@ -39,17 +40,19 @@ const Footer = () => {
         <FooterWrap>
           <MoreInfo>
             <MoreInfoHeading>More Information</MoreInfoHeading>
-            <Link>Terms & Conditions</Link>
-            <Link>News & Events</Link>
-            <Link>All Products</Link>
-            <Link>Privacy Policy</Link>
+            <Link to="/terms-and-conditions">Terms & Conditions</Link>
+            <Link to="/products">All Products</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </MoreInfo>
           <FollowSection>
             <FollowHeading>Social Media</FollowHeading>
             <SocialMedias>
-              <Facebook sx={iconStyles} />
-              <Instagram sx={iconStyles} />
-              <Twitter sx={iconStyles} />
+              <Redirect href="https://www.facebook.com/people/Klassway/100083345738902/">
+                <Facebook sx={iconStyles} />
+              </Redirect>
+              <Redirect href="https://instagram.com/team_klassway?igshid=YmMyMTA2M2Y=">
+                <Instagram sx={iconStyles} />
+              </Redirect>
             </SocialMedias>
           </FollowSection>
           <GetInTouch>
@@ -61,21 +64,20 @@ const Footer = () => {
                 <Phone />
               </PhoneLogo>
               <PhoneNumberSection>
-                <PhoneNumberOne>+91-7030283481</PhoneNumberOne>
+                <PhoneNumberOne>+91-84188 96758</PhoneNumberOne>
               </PhoneNumberSection>
             </PhoneSection>
             <EmailSection>
               <EmailLogo>
                 <EmailOutlined />
               </EmailLogo>
-              <EmailId>abc@gmail.com</EmailId>
+              <EmailId>samta@klassway.com</EmailId>
             </EmailSection>
           </GetInTouch>
         </FooterWrap>
         <CopyRightSection>
           <CopyRightHeading>
-            © 2017 Shenzhen Bell Creative Science and Education Co., Ltd. All
-            rights reserved.
+            Copyright © 2023 Klassway. All rights reserved.
           </CopyRightHeading>
         </CopyRightSection>
       </Wrapper>

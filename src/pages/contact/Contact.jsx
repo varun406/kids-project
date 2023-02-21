@@ -1,5 +1,5 @@
 import { CallMade } from "@mui/icons-material";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Error,
@@ -25,8 +25,20 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import Pulse from "react-reveal/Pulse";
 import { contactSchema } from "./contactSchema";
+import { SendMail } from "../../API/api";
+import { Authentication } from "../../App";
+import { useContext } from "react";
+import { Alert, Snackbar } from "@mui/material";
 
 const Contact = () => {
+  const { User } = useContext(Authentication);
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertText, setAlertText] = useState("Somthing");
+  const [alertType, setAlertType] = useState("success");
+  const handleClose = () => {
+    setAlertOpen(false);
+  };
+
   const {
     register: contact,
     handleSubmit,
@@ -34,13 +46,35 @@ const Contact = () => {
     reset,
   } = useForm({ mode: "onBlur", resolver: yupResolver(contactSchema) });
 
-  const onSubmitt = (d) => {
-    alert(JSON.stringify(d));
+  const onSubmitt = async (d) => {
+    setAlertOpen(true);
+    setAlertText("Sending...");
+    const res = await SendMail(d, User?.id);
+
+    if (res.data !== "email sent") {
+      setAlertType("error");
+    }
+
+    setAlertText("Sent, Thanks for contacting.");
     reset();
   };
 
   return (
     <Container>
+      <Snackbar
+        open={alertOpen}
+        autoHideDuration={6000}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        onClose={handleClose}
+      >
+        <Alert
+          severity={alertType}
+          sx={{ width: "100%" }}
+          onClose={handleClose}
+        >
+          {alertText}
+        </Alert>
+      </Snackbar>
       <GlobalStyles />
       <Header />
       <Wrapper>
@@ -63,7 +97,7 @@ const Contact = () => {
           </InputSection>
           <InputSection>
             <InputLabel>Phone no.</InputLabel>
-            <StyledInputField type="tel" {...contact("phone")} />
+            <StyledInputField type="text" {...contact("phone")} />
             <Error>{errors.phone?.message}</Error>
           </InputSection>
           <InputSection>

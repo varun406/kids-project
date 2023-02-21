@@ -36,6 +36,8 @@ import Videos from "./pages/media/videos/Videos";
 import Gallery from "./pages/media/gallery/Gallery";
 import Courses from "./pages/courses/Courses";
 import CategoryCourse from "./pages/category-course/CategoryCourse";
+import TermsAndConditions from "./pages/terms-and-conditions/TermsAndConditions";
+import PrivacyPolicy from "./pages/privacy-policy/PrivacyPolicy";
 
 export const SidebarContext = createContext(null);
 export const CourseModalContext = createContext(null);
@@ -54,7 +56,7 @@ const App = () => {
   const [User, setUser] = useState();
   const [courseModalData, setCourseModalData] = useState();
 
-  console.clear();
+  // console.clear();
 
   return (
     <div className="App">
@@ -117,6 +119,11 @@ const App = () => {
                     <Route path="/media/images" element={<Gallery />} />
                     <Route path="/courses" element={<Courses />} />
                     <Route path="/media/videos" element={<Videos />} />
+                    <Route
+                      path="/terms-and-conditions"
+                      element={<TermsAndConditions />}
+                    />
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route
                       element={
                         <PrivateRoute

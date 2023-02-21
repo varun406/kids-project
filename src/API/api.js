@@ -195,3 +195,11 @@ export const SearchCourse = async (q, category, price) => {
   );
   return res;
 };
+
+export const SendMail = async (data, userId) => {
+  const res = await axios.post(`${HOST_NAME}/mail/send-default-mail`, {
+    ...data,
+    userId,
+  });
+  return res;
+};
