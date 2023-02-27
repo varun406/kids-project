@@ -9,48 +9,45 @@ import { Authentication } from "../../App";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { setLoading, isLoading, setAuthentication, isAuthenticated, setUser } =
+    const { setLoading, isLoading, setAuthentication, isAuthenticated, setUser } =
     useContext(Authentication);
-  const navigate = useNavigate();
-  const win = window.localStorage;
+    const navigate = useNavigate();
+    const win = window.localStorage;
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({ resolver: yupResolver(loginSchema) });
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({ resolver: yupResolver(loginSchema) });
 
-  const onSubmit = async (d) => {
-    setLoading(true);
-    const res = await AuthenticateAPI("login", d);
-    setLoading(false);
-    if (res.success) {
-      setAuthentication(true);
-      console.log(isAuthenticated);
-      setUser(res.message);
-      console.log(res.message.role);
-      win.setItem("token", res.token);
-      if (res.message.role === "Admin") {
-        navigate("/admin", { replace: true });
-      }
+    const onSubmit = async(d) => {
+        setLoading(true);
+        const res = await AuthenticateAPI("login", d);
+        setLoading(false);
+        if (res.success) {
+            setAuthentication(true);
+            setUser(res.message);
+            console.log(res.message.role);
+            win.setItem("token", res.token);
+            if (res.message.role === "Admin") {
+                navigate("/admin", { replace: true });
+            }
+            win.setItem("token", res.token);
+            navigate("/", { replace: true });
+        }
+    };
 
-      console.log(res.token);
-      win.setItem("token", res.token);
-      navigate("/", { replace: true });
-    }
-  };
-
-  return (
-    <Container>
-      <Auth
-        method="login"
-        register={register}
-        handleSubmit={handleSubmit}
-        onSubmit={onSubmit}
-        errors={errors}
-      />
-    </Container>
-  );
+    return ( <
+        Container >
+        <
+        Auth method = "login"
+        register = { register }
+        handleSubmit = { handleSubmit }
+        onSubmit = { onSubmit }
+        errors = { errors }
+        /> <
+        /Container>
+    );
 };
 
 export default Login;
