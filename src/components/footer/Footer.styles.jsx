@@ -19,7 +19,7 @@ export const FooterWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 40px;
+  gap: 20px;
   padding-block: 15px;
 
   @media (max-width: 768px) {
@@ -69,6 +69,7 @@ export const GetInTouch = styled.div`
   max-width: 300px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 export const GetInTouchHeading = styled.h1`
   font-size: 18px;
@@ -81,10 +82,12 @@ export const PhoneSection = styled.div`
 `;
 export const PhoneLogo = styled.div``;
 export const PhoneNumberSection = styled.div``;
-export const PhoneNumberOne = styled.p``;
+export const PhoneNumberOne = styled.p`
+  margin: 0;
+`;
 export const EmailSection = styled(PhoneSection)``;
 export const EmailLogo = styled.div``;
-export const EmailId = styled.p``;
+export const EmailId = styled(PhoneNumberOne)``;
 export const CopyRightSection = styled.div`
   display: flex;
   align-items: flex-end;

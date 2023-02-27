@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Pulse from "react-reveal/Pulse";
 import { carouselSettings } from "./carouselSettings";
-import { atalVideos } from "../../pages/tinkering-school/videos";
 
 const Carousel = () => {
   return (
@@ -13,17 +12,15 @@ const Carousel = () => {
       <Container>
         <Wrapper>
           <StyledSlider {...carouselSettings}>
-            {atalVideos.map((video) => (
-              <ImgWrap>
-                <SlideVideo
-                  autoPlay
-                  loop
-                  muted
-                  onContextMenu={(e) => e.preventDefault()}
-                  src={video.src}
-                />
-              </ImgWrap>
-            ))}
+            <ImgWrap>
+              <SlideVideo
+                autoPlay
+                loop
+                muted
+                onContextMenu={(e) => e.preventDefault()}
+                src="/assets/Camera Roll/HOME/HOME VIDEO.mp4"
+              />
+            </ImgWrap>
           </StyledSlider>
         </Wrapper>
       </Container>

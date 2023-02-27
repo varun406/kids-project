@@ -23,6 +23,7 @@ const Products = () => {
   const [category, setCategory] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getData = async () => {
       const res = await GetAllCategory();
       setCategory(res.data.courses);

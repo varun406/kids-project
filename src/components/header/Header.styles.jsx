@@ -37,8 +37,9 @@ export const LogoSection = styled.div`
 
 export const Logo = styled.img`
   width: 100%;
+  max-width: 150px;
   height: 60px;
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const UserSection = styled.div`

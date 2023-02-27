@@ -5,6 +5,7 @@ import {
   AgeDescription,
   AgeTitle,
   CardSection,
+  DetailWrap,
   LearnMore,
   ProgramCard,
   ProgramDetails,
@@ -15,12 +16,6 @@ import {
 import { coreProgram } from "./programData";
 
 const CoreProgram = () => {
-  const [details, setDetails] = useState();
-
-  const handleAccordion = (index) => {
-    console.log(details, index);
-  };
-
   return (
     <Container>
       <Wrapper>

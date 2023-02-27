@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding-block: 50px;
+  gap: 30px;
+  padding-block: 20px;
 `;
 
 export const Section = styled.div`
@@ -21,23 +21,32 @@ export const StyledDesc = styled(SectionDesc)`
 `;
 
 export const ExpertiseSection = styled.div`
+  padding: 7px;
   background-color: #bccef8;
   border-radius: 20px;
   display: flex;
+  gap: 10px;
   color: darkblue;
   justify-content: space-around;
-  @media (max-width: 420px) {
-    flex-direction: column;
-  }
 `;
 
 export const Expertise = styled.div`
   text-align: center;
 `;
-export const First = styled.div``;
+export const First = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+`;
 export const Second = styled(First)``;
-export const Colored = styled.h1``;
-export const Desc = styled.h1``;
+export const Colored = styled.h1`
+  margin: 0;
+`;
+export const Desc = styled.h1`
+  margin: 0;
+`;
 
 export const GroupSection = styled.div`
   display: flex;

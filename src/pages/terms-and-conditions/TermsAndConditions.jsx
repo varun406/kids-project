@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedText from "react-animated-text-content";
 import {
   Container,
   GlobalStyles,
@@ -15,12 +16,23 @@ import {
 } from "./TermsAndConditions.styles";
 
 const TermsAndConditions = () => {
+  window.scrollTo(0, 0);
   return (
     <Container>
       <Header />
       <GlobalStyles />
       <Wrapper>
-        <SectionHeading>Terms and Conditions</SectionHeading>
+        <center>
+          <AnimatedText
+            type="chars" // animate words or chars
+            animationType="float"
+            interval={0.1}
+            duration={1.7}
+            tag="h1"
+          >
+            Terms and conditions
+          </AnimatedText>
+        </center>
         <TermsWrap>
           <StyledSectionHeading>Welcome to KlassWAY</StyledSectionHeading>
           <Points>

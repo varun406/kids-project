@@ -56,7 +56,7 @@ const App = () => {
   const [User, setUser] = useState();
   const [courseModalData, setCourseModalData] = useState();
 
-  // console.clear();
+  console.clear();
 
   return (
     <div className="App">

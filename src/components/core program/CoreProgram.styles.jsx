@@ -27,14 +27,16 @@ export const ProgramDetails = styled.div`
   display: none;
   width: 100%;
   height: 100%;
-  padding-top: 15%;
   position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex: 3;
   text-align: center;
   backdrop-filter: blur(5px);
 
   &:hover {
-    display: block;
+    display: flex;
   }
 `;
 
@@ -50,7 +52,7 @@ export const ProgramImage = styled.img`
   }
 
   &:hover ~ ${ProgramDetails} {
-    display: block;
+    display: flex;
   }
 `;
 

@@ -1,5 +1,6 @@
 import StyledEngine from "@mui/styled-engine";
 import React from "react";
+import AnimatedText from "react-animated-text-content";
 import {
   Container,
   GlobalStyles,
@@ -15,12 +16,23 @@ import {
 import { PolicyWrap, Wrapper } from "./PrivacyPolicy.styles";
 
 const PrivacyPolicy = () => {
+  window.scrollTo(0, 0);
   return (
     <Container>
       <Header />
       <GlobalStyles />
       <Wrapper>
-        <SectionHeading>Policy and Privacy</SectionHeading>
+        <center>
+          <AnimatedText
+            type="chars" // animate words or chars
+            animationType="float"
+            interval={0.1}
+            duration={1.7}
+            tag="h1"
+          >
+            Privacy Policy
+          </AnimatedText>
+        </center>
         <PolicyWrap>
           <StyledSectionDesc>
             <b> Disclaimer:</b> This Privacy Policy describes how your personal

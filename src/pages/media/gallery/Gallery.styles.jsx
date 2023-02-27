@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-block: 50px;
+  gap: 20px;
+  padding: 0 20px;
 `;
 
 export const GalleryGrid = styled.div`

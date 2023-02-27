@@ -68,10 +68,10 @@ const Course = ({ heading, catagory, popularCourses, coursesByAuthor }) => {
                     <Card
                       title={course.title}
                       image={course.src}
-                      // author={course.auther}
-                      // rating={course.rating}
-                      // ratingCount={course.noOfRating}
-                      // price={course.price}
+                      author={course.auther}
+                      rating={course.rating}
+                      ratingCount={course.noOfRating}
+                      price={course.price}
                     />
                   </CardSection>
                 );

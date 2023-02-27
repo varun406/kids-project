@@ -4,7 +4,8 @@ import {
 } from "@mui/icons-material";
 
 export const settings = {
-  infinite: false,
+  infinite: true,
+  autoplay: true,
   speed: 500,
   slidesToShow: 6,
   slidesToScroll: 1,

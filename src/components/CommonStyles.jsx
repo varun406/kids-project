@@ -113,8 +113,8 @@ export const SectionImage = styled.img`
 export const SectionHeading = styled.h1`
   font-size: 28px;
   font-weight: bold;
-  line-height: 1;
-  margin: 0 0 20px;
+  line-height: 1.3;
+  margin: 0 0 15px;
   text-align: center;
 
   @media (max-width: 768px) {

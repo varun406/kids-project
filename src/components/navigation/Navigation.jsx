@@ -23,10 +23,12 @@ import {
   ListSection,
   ListWrap,
   MediaLink,
+  MediaLinkSection,
   MediaSection,
   MyCourseLink,
   MyCourseSection,
   NavigationSection,
+  useStyles,
 } from "./Navigation.styles";
 
 const Navigation = ({ direction, visible }) => {
@@ -56,11 +58,7 @@ const Navigation = ({ direction, visible }) => {
           onChange={handleChange("programs")}
           sx={AccordionStyles}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMore />}>
             <LinkSection>
               <BusinessCenterIcon />
               OUR PROGRAMS
@@ -116,15 +114,11 @@ const Navigation = ({ direction, visible }) => {
           onChange={handleChange("media")}
           sx={AccordionStyles}
         >
-          <AccordionSummary
-            expandIcon={<ExpandMore />}
-            aria-controls="panel1bh-content"
-            id="panel1bh-header"
-          >
-            <LinkSection>
+          <AccordionSummary expandIcon={<ExpandMore />}>
+            <MediaLinkSection>
               <Inventory />
               MEDIA
-            </LinkSection>
+            </MediaLinkSection>
           </AccordionSummary>
           <AccordionDetails sx={{ width: "100%" }}>
             <ListWrap>

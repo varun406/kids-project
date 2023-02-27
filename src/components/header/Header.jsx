@@ -65,7 +65,7 @@ const Header = ({ user }) => {
                 <Menu sx={iconStyles} onClick={handleSidebar} />
               </MenuSection>
               <Link to="/">
-                <Logo src="/logo1.png" alt="logo" />
+                <Logo src="/assets/logo.png" alt="logo" />
               </Link>
             </LogoSection>
 

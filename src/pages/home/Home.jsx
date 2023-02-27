@@ -15,6 +15,7 @@ import { coursesData } from "./course";
 import { Box, Wrapper } from "./Home.styles";
 
 const Home = () => {
+  window.scrollTo(0, 0);
   const { setLoading, setAuthentication, isAuthenticated } =
     useContext(Authentication);
 
@@ -39,6 +40,8 @@ const Home = () => {
     }
   }, [isAuthenticated, setAuthentication, setLoading]);
 
+  console.log(popularCourses);
+
   return (
     <Box>
       <GlobalStyles />
@@ -48,7 +51,9 @@ const Home = () => {
         <Pros />
         <CoreProgram />
         <Details />
-        <Course heading="Courses" popularCourses={coursesData} />
+        {popularCourses && (
+          <Course heading="Courses" popularCourses={popularCourses} />
+        )}
         <CTA CTAHeading={CTAHeading} CTACall={CTACall} />
       </Wrapper>
       <Footer />

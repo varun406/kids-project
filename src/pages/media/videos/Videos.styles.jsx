@@ -5,11 +5,13 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  padding-block: 50px;
+  gap: 20px;
+  padding: 0 20px;
 `;
 
 export const VideoGrid = styled.div`
+  width: 100%;
+  min-height: 250px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;

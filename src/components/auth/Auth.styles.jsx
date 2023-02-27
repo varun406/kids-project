@@ -46,7 +46,7 @@ export const LoginSection = styled.form`
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  padding-block: 30px;
+  padding: 25px 0 7px 0;
 `;
 export const HeadingSection = styled.div``;
 export const Heading = styled(SectionHeading)`

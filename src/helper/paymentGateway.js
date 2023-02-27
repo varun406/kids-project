@@ -37,8 +37,6 @@ export const checkoutHandler = async (
       }
     );
 
-    console.log(res.data);
-
     BuyCourse();
   };
 

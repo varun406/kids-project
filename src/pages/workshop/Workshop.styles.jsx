@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  padding-block: 50px;
+  gap: 30px;
+  padding-block: 20px;
 `;
 
 export const WorkshopSection = styled.div`
@@ -32,5 +32,7 @@ export const Title = styled.h1`
   font-size: 18px;
   color: darkgray;
 `;
-export const WorkshopList = styled.ul``;
+export const WorkshopList = styled.ul`
+  padding-left: 25px;
+`;
 export const List = styled.li``;

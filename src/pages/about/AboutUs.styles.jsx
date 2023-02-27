@@ -10,8 +10,8 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 80px;
-  padding-block: 50px;
+  gap: 30px;
+  padding: 0 0 30px 0;
 `;
 
 export const OverViewSection = styled.div``;

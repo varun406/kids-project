@@ -41,7 +41,11 @@ export const LinkSection = styled.div`
   cursor: pointer;
   margin-right: auto;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
+`;
+
+export const MediaLinkSection = styled(LinkSection)`
+  margin-right: 67px;
 `;
 
 export const LinkWrap = styled.div`

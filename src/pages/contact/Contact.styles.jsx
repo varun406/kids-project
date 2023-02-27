@@ -8,7 +8,7 @@ import {
 export const Wrapper = styled.div`
   width: min(1250px, calc(100% - 48px));
   margin-inline: auto;
-  padding-block: 50px;
+  padding-block: 30px;
 `;
 
 export const StyledHeading = styled(SectionHeading)`
@@ -58,7 +58,11 @@ export const TextAreaField = styled.textarea`
 `;
 
 export const StyledFormButton = styled(FormButton)`
-  max-width: 330px;
+  width: 100%;
+  max-width: 350px;
   min-height: 50px;
   margin-top: 20px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 `;

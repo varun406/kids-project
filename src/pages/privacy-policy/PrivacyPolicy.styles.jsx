@@ -5,8 +5,8 @@ export const Wrapper = styled.div`
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-block: 50px;
+  gap: 10px;
+  padding-block: 20px;
 `;
 
 export const PolicyWrap = styled.div`
